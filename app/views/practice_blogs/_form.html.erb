@@ -1,0 +1,26 @@
+<%= form_with(model: @practice_blog,url: new_or_edit , local: true) do |form| %>
+  <% if @practice_blog.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @practice_blog.errors.count %>件のエラー</h2>
+      <ul>
+      <% @practice_blog.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :practice_blog_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :content %>
+    <%= form.text_area :content, id: :practice_blog_content %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit '送信' %>
+  </div>
+<% end %>

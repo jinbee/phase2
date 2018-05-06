@@ -1,0 +1,16 @@
+<h1>詳細</h1>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @practice_blog.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @practice_blog.content %>
+</p>
+
+<%= link_to '編集', edit_practice_blog_path(@practice_blog.id) %>
+|
+<%= link_to '戻る', practice_blogs_path %>

@@ -1,0 +1,26 @@
+<h1>Blog一覧</h1>
+<p id="notice"><%= notice %></p>
+<table>
+  <thead>
+    <tr>
+      <th>タイトル</th>
+      <th>内容</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @practice_blogs.each do |practice_blog| %>
+      <tr>
+        <td><%= practice_blog.title %></td>
+        <td><%= practice_blog.content %></td>
+        <td><%= link_to '詳細', practice_blog_path(practice_blog) %></td>
+        <td><%= link_to '編集', edit_practice_blog_path(practice_blog) %></td>
+        <td><%= link_to '削除', practice_blog, method: :delete, data: { confirm: '削除しますか?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'ブログ作成画面へ', new_practice_blog_path %>

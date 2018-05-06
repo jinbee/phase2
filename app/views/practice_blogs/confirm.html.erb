@@ -1,0 +1,28 @@
+<style type="text/css">
+ .form_confirm form {
+    display: inline;
+    margin: 0 5px;
+  }
+</style>
+<h1>投稿の確認</h1>
+<div class="form_confirm">
+<%= form_with(model: @practice_blog,local:true ,url: practice_blogs_path) do |form| %>
+
+    <h3>タイトル</h3>
+    <p><%= @practice_blog.title %></p>
+    <%= form.hidden_field :title %>
+    
+    <h3>内容</h3>
+    <p><%= @practice_blog.content %></p>
+    <%= form.hidden_field :content %>    
+
+    <%= form.submit '投稿' %>
+
+<% end %>
+
+<%= form_with(model: @practice_blog,local:true ,url: new_practice_blog_path, method: 'get') do |form| %>
+    <%= form.hidden_field :title %>
+    <%= form.hidden_field :content %>    
+    <%= form.submit "戻る" ,name:'back' %>
+<% end %>
+</div>
