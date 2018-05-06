@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+  root to: 'practice_blogs#index'
   resources :practice_blogs do
   #IDがいらない(データを特定しない場合collection。IDいるのはmember
     collection do
@@ -7,7 +7,5 @@ Rails.application.routes.draw do
       post:confirm
     end 
   end
-  get 'practice_blogs/hogee',to:'blogs#hogee'  
-  post 'practice_blogs/new',to:'blogs#new'
-  
+
 end
